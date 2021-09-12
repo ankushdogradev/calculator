@@ -1,0 +1,97 @@
+@import "../../scss/utils/variables";
+
+// .togl {
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   flex-direction: column;
+
+//   &__label__num {
+//     display: flex;
+//     gap: 1rem;
+//     margin-bottom: 0.5rem;
+//   }
+//   &__label__ball {
+//     position: relative;
+//     display: inline-block;
+
+//     cursor: pointer;
+//     width: 4.375rem;
+//     height: 1.5625rem;
+//     background: $th1-bg-2;
+//     border-radius: 1rem;
+
+//     &::after {
+//       position: absolute;
+//       content: "";
+//       height: 24px;
+//       width: 24px;
+//       right: 10px;
+//       bottom: 6px;
+//       transition: 0.2s;
+//       pointer-events: none;
+//       color: #fff;
+//     }
+
+//     &::before {
+//     }
+//   }
+// }
+
+.togl {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  &__num {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  &__slider {
+    color: white;
+    display: grid;
+    grid-template-columns: 70px 70px;
+    grid-template-rows: 20px 20px;
+    grid-template-areas:
+      "togl__slider togl__slider__labels"
+      "togl__slider togl__slider__inputs";
+    margin-top: -7px;
+    &__slider__labels {
+      grid-area: labels;
+      text-align: center;
+      label {
+        margin: 0 4px 0 4px;
+      }
+    }
+    &__slider__inputs {
+      position: relative;
+      grid-area: inputs;
+      text-align: center;
+      input {
+        margin: 10px 2px 0 2px;
+        transform: scale(2);
+        opacity: 0;
+        z-index: 1;
+      }
+      &__dot-container {
+        border-radius: 20px;
+        padding: 5px;
+        width: 70px;
+        background-color: var(--Very_dark_desaturated_blue2);
+        position: absolute;
+        top: 6.5%;
+        right: 0%;
+        z-index: -1;
+        transition: all 0.2s ease;
+        &__dot {
+          background-color: red;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
